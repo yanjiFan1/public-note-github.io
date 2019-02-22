@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面试题</title>
+</head>
+<body>
+	<script>
+		// 练习1
+		function test1() {
+			console.log(5+null)  //null可以转成0，结果为5   
+			console.log(Number(null))  //0
+			console.log(Number(undefined)) //NaN
+			console.log(5+undefined)  //NaN
+			// 请使用 isNaN() 来判断一个值是否是数字。原因是 NaN 与所有值都不相等，包括它自己。
+			console.log(Number(300)+"<br>");
+			console.log(Number("Hello World")+"<br>");
+			console.log(isNaN(300)+"<br>");
+			console.log(isNaN("Hello World")+"<br>");
+		}
+
+		// 练习2
+		function test2() {
+			
+		}
+
+		//common
+		test1();
+
+	</script>
+</body>
+</html>

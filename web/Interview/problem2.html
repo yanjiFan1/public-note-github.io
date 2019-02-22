@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js数据类型(6种)</title>
+	<style>
+		li{
+			display: inline-block;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<mark>数值（number）</mark>：整数和小数（比如1和3.14） <br/>
+		<mark>字符串（string）</mark>：文本（比如Hello World）。 <br/>
+		<mark>布尔值（boolean）</mark>：表示真伪的两个特殊值，即true（真）和false（假） <br/>
+		<mark>undefined</mark>：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 <br/>
+		<mark>null</mark>：表示空值，即此处的值为空。 <br/>
+		<mark>对象（object）</mark>：各种值组成的集合。 <br/>
+		<mark>数值、字符串、布尔值这三种类型，合称为原始类型;对象则称为合成类型;undefined和null，一般将它们看成两个特殊值</mark>
+	</div>
+	
+	<fieldset>
+		<legend><h2>布尔值</h2></legend>
+		<h3>下列运算符会返回布尔值：</h3>
+		<section>
+			两元逻辑运算符： && (And)，|| (Or) <br/>
+			前置逻辑运算符： ! (Not) <br/>
+			相等运算符：===，!==，==，!= <br/>
+			比较运算符：>，>=，<，<= <br/>
+		</section>
+		<mark>如果 JavaScript 预期某个位置应该是布尔值，会将该位置上现有的值自动转为布尔值。转换规则是除了下面六个值被转为false，其他值都视为true。</mark>
+		<ul>
+			<li>undefined</li>
+			<li>null</li>
+			<li>false</li>
+			<li>0</li>
+			<li>NaN</li>
+			<li>""或''（空字符串）</li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend><h2>强制转换</h2></legend>
+		<mark>JavaScript 是一种动态类型语言，变量没有类型限制，可以随时赋予任意值。</mark>
+		<text>强制转换主要指使用Number、String和Boolean三个函数，手动将各种类型的值，分布转换成数字、字符串或者布尔值。</text>
+	</fieldset>
+
+	<fieldset>
+		<legend><h2>自动转换</h2></legend>
+	</fieldset>
+
+	<a href="https://javascript.ruanyifeng.com/grammar/types.html">参考文档</a>
+	<a href="https://javascript.ruanyifeng.com/grammar/conversion.html">数据类型转换</a>
+	<script>
+		function test1() {
+			console.log('6'-'5');  //1   这个是属于自动转换
+		}
+
+		//强制转换之Number
+		function test2() {
+			console.log(Number(324)); //324       数值：转换后还是原来的值
+			console.log(Number('324')); //324     字符串：如果可以被解析为数值，则转换为相应的数值
+			console.log(Number('324aa')); //NaN   字符串：如果不可以被解析为数值，返回 NaN
+			console.log(parseInt('324aa')); //324 Number函数将字符串转为数值，要比parseInt函数严格很多。基本上，只要有一个字符无法转成数值，整个字符串就会被转为NaN
+			console.log(Number('')); //0          空字符串转为0
+			console.log(Number(true)) //1         布尔值：true 转成 1，false 转成 0
+			console.log(Number(undefined)) //NaN  undefined：转成NaN
+			console.log(Number(null)) //0         null：转成0
+			/*Number背后的转换规则比较复杂。*/
+			// 第一步，调用对象自身的valueOf方法。如果返回原始类型的值，则直接对该值使用Number函数，不再进行后续步骤。
+			// 第二步，如果valueOf方法返回的还是对象，则改为调用对象自身的toString方法。如果toString方法返回原始类型的值，则对该值使用Number函数，不再进行后续步骤。
+			// 第三步，如果toString方法返回的是对象，就报错。
+		}
+
+		//强制转换之String
+			// 数值：转为相应的字符串。
+			// 字符串：转换后还是原来的值。
+			// 布尔值：true转为字符串"true"，false转为字符串"false"。
+			// undefined：转为字符串"undefined"。
+			// null：转为字符串"null"。
+		function test3() {
+			console.log(String(123)) //'123'
+			console.log(String('abc')) //'abc'
+			console.log(String(true)) //'true'
+			console.log(String(undefined)) //'undefined'
+			console.log(String(null)) //'null'
+		}
+		/*String方法背后的转换规则*/
+		// 1先调用对象自身的toString方法。如果返回原始类型的值，则对该值使用String函数，不再进行以下步骤。
+		// 2如果toString方法返回的是对象，再调用原对象的valueOf方法。如果valueOf方法返回原始类型的值，则对该值使用String函数，不再进行以下步骤。
+		// 3如果valueOf方法返回的是对象，就报错。
+
+		//强制转换之Boolean
+		function test4() {
+			console.log(Boolean(undefined)) //false
+			console.log(Boolean(null)) //false
+			console.log(Boolean(0)) //false
+			console.log(Boolean(null)) //false
+			console.log(Boolean(''))  
+			//除过以上几种情况，其他的是true
+		}
+
+		//自动转换
+		function test5() {
+			console.log(123+'abc') //"123abc"                 第一种情况，不同类型的数据互相运算。
+			if ('abc') {console.log('hello')} //'hello'       第二种情况，对非布尔值类型的数据求布尔值。
+			console.log(+ {foo: 'bar'}) // NaN                第三种情况，对非数值类型的值使用一元运算符（即+和-）。
+			console.log(- [1, 2, 3]) // NaN                   第三种情况，对非数值类型的值使用一元运算符（即+和-）。
+		}
+
+		//自动转换之转化为布尔值
+		function test6() {
+			if ( !undefined
+			  && !null
+			  && !0
+			  && !NaN
+			  && !''
+			) {
+			  console.log('true');
+			} // true
+
+			// 写法一
+			// expression ? true : false
+			// 写法二
+			// !! expression
+		}
+
+		//自动转换之转化为字符串
+		function test7() {
+			console.log('5' + 1)                  // '51'
+			console.log('5' + true)               // "5true"
+			console.log('5' + false)              // "5false"
+			console.log('5' + {})                 // "5[object Object]"
+			console.log('5' + [])                 // "5"
+			console.log('5' + function (){})      // "5function (){}"
+			console.log('5' + undefined)          // "5undefined"
+			console.log('5' + null)               // "5null"
+			let obj = {
+			  width: '100'
+			}
+			console.log(obj.width + 20) // "10020"
+		}
+
+		//自动转换之转化为数值
+		function test8() {
+			//除了加法运算符（+）有可能把运算子转为字符串，其他运算符都会把运算子自动转成数值。
+			console.log('5' - '2')           // 3
+			console.log('5' * '2')           // 10
+			console.log(true - 1)            // 0
+			console.log(false - 1)           // -1
+			console.log('1' - 1)             // 0
+			console.log('5' * [])            // 0
+			console.log(false / '5')         // 0
+			console.log('abc' - 1)           // NaN
+			console.log(null + 1)            // 1
+			console.log(undefined + 1)       // NaN
+			//一元运算符也会把运算子转成数值。
+
+			console.log(+'abc')  
+			console.log(-'abc')
+			console.log(+true )
+			console.log(-false)       
+			 // NaN
+			 // NaN
+			 // 1
+			 // 0
+		}
+
+
+		test8()
+	</script>
+</body>
+</html>
