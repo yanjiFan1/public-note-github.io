@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call apply</title>
+</head>
+<body>
+	<script>
+		function func(a, b, c) {
+			console.log(a, b, c);
+		}
+		var func1 = func.bind(null,'linxin')
+		func('A','B','C');  //A B C
+		func1('A','B','C'); //linxin A B
+		func1('B','C');//linxin B C 
+		func.call(null,'linxin');// linxin undefined undefined
+	</script>
+</body>
+</html>
