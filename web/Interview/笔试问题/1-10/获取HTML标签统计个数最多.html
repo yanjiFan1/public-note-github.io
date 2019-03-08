@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS获取页面所有元素并统计每个标签的个数</title>
+</head>
+<body>
+	<div class="nav"><img src=""/></div>
+    <div id="container">
+        <div id="user">用户信息<span id="userinfo"></span></div>
+    </div>	<script type="text/javascript">
+		console.time()
+		let tags = document.getElementsByTagName('*');
+		let tagsArr = [];
+		console.log(tags)
+		console.timeEnd()
+
+		function countTag() {
+			for(let i = 0; i < tags.length; i++) {
+				tagsArr.push((tags[i].tagName).toLowerCase())
+			}
+
+			let temp = [];
+	        let tag = [];
+
+			for(let i = 0; i < tags.length; i++) {
+				for(let j = i+1; j < tagsArr.length + 1; j++) {
+					if(tagsArr[i] == tagsArr[j]) {
+						temp.push(tagsArr[j]);
+						tagsArr.splice(j,1);  //添加/删除数组元素
+						j--;
+					}
+
+					if( j == tagsArr.length - i) {
+						temp.push(tagsArr[i]);
+						tagsArr.splice(i,1);
+						i--;
+						tag.push(temp);
+						temp = [];
+					}
+
+				}
+			}
+			return tag;
+		}
+
+		let tagsLength = [];
+		for(let p of countTag()){
+			tagsLength.push(p.length)
+		}
+		let MaxTagLength = Math.max(...tagsLength)
+		debugger
+		console.log(tagsLength)
+		console.log(...tagsLength)
+		console.log(MaxTagLength)
+
+
+
+	</script>
+</body>
+</html>

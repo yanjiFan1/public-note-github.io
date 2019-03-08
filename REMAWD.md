@@ -9,7 +9,7 @@
 @6 jquery库： http://www.jq22.com/
 @7 白鹭引擎（做游戏的）： https://www.egret.com/
 @8 微信小程序： https://developers.weixin.qq.com/miniprogram/dev/index.html?t=18121317
-@9 canIuse(查兼容性)  https://caniuse.com/
+@9 掘金 
 @10 博客园  https://www.cnblogs.com/
 @11 csdn https://www.csdn.net/
 @12 segmentfault https://segmentfault.com/
@@ -24,15 +24,16 @@
 3. ECMAScript 6 入门： http://es6.ruanyifeng.com/
 
 博客地址：
-
 @1 紫陌博客：https://github.com/laizimo star-800
-
+@2 廖雪峰 https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344997235247b53be560ab041a7b10360a567422a78000
+@3. 阮一峰：http://www.ruanyifeng.com/blog/developer/
+@4 淘宝前端团队(FED) http://taobaofed.org/blog
 
 工具地址：
 1.使用Benchmark.js和jsPerf分析代码性能  https://segmentfault.com/a/1190000003486676
 2.bug监控fundebug： https://docs.fundebug.com
 3.loadsh(js方法库): https://www.lodashjs.com/
-
+4. canIuse(查兼容性)  https://caniuse.com/
 
 
 

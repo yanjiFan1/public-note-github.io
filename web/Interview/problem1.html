@@ -6,6 +6,9 @@
 </head>
 <body>
 	<script>
+		/*(function() {
+			alert([+!+ []]+[])
+		})()*/
 		/*1、利用ES6 Set去重（ES6中最常用）*/
 		function unique1(arr) {
 			return Array.from(new Set(arr))   //[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {}, {}]
@@ -151,9 +154,11 @@
 			return [...new Set(arr)]  //(12) [1, "true", true, false, undefined, null, NaN, "NaN", 0, "a", {…}, {…}]
 		}
 
+		/*十三. lodash _.uniq([2, 1, 2]);// => [2, 1]   需要引入lodash*/
+
 		// common
 		var arr = [1,1,'true','true',true,true,false,false,undefined,undefined,null,null,NaN,NaN,'NaN',0,0,'a','a',{},{}]
-		console.log(unique12(arr))
+		console.log(unique7(arr))
 	</script>
 </body>
 </html>

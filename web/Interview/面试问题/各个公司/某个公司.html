@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	1.简单介绍一下标准W3C盒模型
+	W3C标准盒子模型和IE盒子模型
+		W3C盒子模型——属性高（height）和属性宽（width）这两个值不包含 填充（padding）和边框（border）
+		IE盒子模型——属性高（height）和属性宽（width）这两个值包含 填充（padding）和边框（border）
+
+	border-box 设置width 是包含border和padding的
+	content-box  设置width就是内容的具体宽度，不包括padding的border
+
+	2.display:none和visibility:hidden的区别是什么? 参考：https://www.jianshu.com/p/da8e9fba48b7
+		1.是否继承 display不是继承属性，而visibility是继承属性  后代元素的visibility属性若存在则不会继承，若不存在则会继承元素visibility的值，意味着：父元素的visibility为hidden但是子元素的visibility为visible则子元素依旧可见，子元素visibility不存在则子元素不可见。而元素的display属性设为none其后整棵子树都不可见。
+
+		2.是否占据空间  使用display:none, 在文档渲染时，该元素如同不存在（但依然存在文档对象模型树中）；而使用visibility：hidden，其占的空间会被空白占位，即一个（display:none）不会再渲染树中出现，一个（visibility）会
+
+		3.页面相关属性改值后是否重新渲染 : visibility:hidden 不渲染   display:none渲染  产生回流
+	
+
+
+	3.如何让图片(img标签)在固定宽高的div中自适应并且水平垂直居中?
+		方法一：弹性布局flex
+		 div{
+	        width:150px;
+	        height: 100px;
+	        border:1px solid #000;
+	        display: flex;
+	        justify-content: center;
+	        align-items: center;
+	    }
+	    img {
+	        width: 50px;
+	        height: 50px;
+	    }
+
+	    方法二：
+	    div{
+	        width:150px;
+	        height: 100px;
+	        position: relative;
+	        border:1px solid #000;
+	    }
+	    img {
+	        width: 50px;
+	        height: 50px;
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        right: 0;
+	        bottom: 0;
+	        margin: auto;
+	    }
+
+	    方法三：
+	    div{
+	        width:150px;
+	        height: 100px;
+	        position: relative;
+	        border:1px solid #000;
+	    }
+	    img {
+	        width: 50px;
+	        height: 50px;
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        transform: translate(-50%,-50%);
+	    }
+
+	    方法四：
+	    div{
+	        width:150px;
+	        height: 100px;
+	        position: relative;
+	        border:1px solid #000;
+	    }
+	    img {
+	        width: 50px;
+	        height: 50px;
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        margin-top: -25px; /* 高度的一半 */
+	        margin-left: -25px; /* 宽度的一半 */
+	    }
+	    方法五：
+	    div{
+	        width:150px;
+	        height: 100px;
+	        display: table-cell;
+	        vertical-align: middle;
+	        text-align: center;
+	        border:1px solid #000;
+	    }
+	    img {
+	        width: 50px;
+	        height: 50px;
+	    }
+
+
+	4.function fun() {}和var fun = function() {} 两种定义函数的方法有什么不同?
+		var fun=function(){} 这种叫做函数表达式 必须先定义后使用
+		function fun(){}这种是函数声明 可以先使用后定义 它会对函数的声明进行一个提升
+
+	5.实现布局的代码
+
+	条件：
+		1.A.B宽200px，C自动填充剩余宽度
+		2.A.B.C能将父节点撑开
+
+		<body>
+			<div class="box-a">A</div>
+			<div class="box-c">C</div>
+			<div class="box-b">B</div>
+		</body>
+		
+	三栏布局，两边固定，中间自适应  参考：https://segmentfault.com/a/1190000008705541
+	1.float实现
+!!!基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧
+原理：元素浮动后，脱离文档流，后面的元素受浮动影响，设置受影响元素的margin值即可
+1 两边固定宽度，中间宽度自适应。
+2 利用中间元素的margin值控制两边的间距
+3 宽度小于左右部分宽度之和时，右侧部分会被挤下去
+
+<div class="wrap">
+    <div class="left">左侧</div>
+    <div class="right">右侧</div>
+    <div class="middle">中间</div>
+</div>
+
+<style type="text/css">
+    .wrap {background: #eee; overflow: hidden; padding: 20px;}  <!-- 生成BFC，计算高度时考虑浮动的元素 -->
+    .left {width: 200px; height: 50px; float: left; background: coral;}
+    .right {width: 120px; height:  200px; float: right; background: lightblue;}
+    .middle {margin-left: 220px; background: lightpink; margin-right: 140px;}
+</style>
+	2.position实现 有顶部对齐问题，需要进行调整，注意中间的高度为整个内容的高度
+<div class="wrap">
+    <div class="left">左侧</div>
+    <div class="middle">中间</div>
+    <div class="right">右侧</div>
+</div>
+
+<style type="text/css">
+    .wrap {background: lightpink;}
+    .left {width: 200px; height: 100px; position: absolute; top: 0; left: 0; background: coral;}
+    .right {width: 120px; height: 100px; position: absolute; top:0; right: 0; background: lightblue;}
+    .middle {height: 50px; margin: 0 140px 0 220px; background: #555;}
+</style>
+	3.float和BFC配合圣杯布局
+！！必须将中间部分的HTML结构写在最前面，三个元素均设置向左浮动。两侧元素宽度固定，中间设置为100%；然后利用左侧元素负的margin值进行偏移，覆盖在中间的宽度之上；右侧的元素同样利用负的margin值进行覆盖
+<div class="wrap">
+    <div class="middle">
+        <div class="main">中间</div>
+    </div>
+    <div class="left">左侧</div>
+    <div class="right">右侧</div>
+</div>
+
+<style type="text/css">
+    .wrap {overflow: hidden;}
+    .left {float: left; width: 200px; height: 100px; background: coral; margin-left: -100%;}
+    .middle {float: left; width: 100%; height: 100px; background: lightblue;}
+    .right {float: left; width: 120px; height: 100px; background: gray; margin-left: -120px;}
+    .main {margin: 0 140px 0 220px; background: lightpink;}
+</style>
+	4 flex布局
+	1 仅需将容器设置为display:flex;，盒内元素两端对其，将中间元素设置为100%宽度即可填充空白，再利用margin值设置边距即可
+	2 并且盒内元素的高度撑开容器的高度
+<div class="wrap">
+    <div class="left">左侧</div>
+    <div class="middle">中间</div>
+    <div class="right">右侧</div>
+</div>
+
+<style type="text/css">
+    .wrap {display: flex; justify-content: space-between;}
+    .left, .right, .middle {height: 100px;}
+    .left {width: 200px; background: coral;}
+    .right {width: 120px; background: lightblue;}
+    .middle {background: #555; width: 100%; margin: 0 20px;}
+</style>
+！！！
+纯float的三栏布局需要将中间的内容放在最后；
+
+绝对定位的三栏布局：元素对其有点问题
+
+圣杯布局：容器内不能撑开高度
+
+flex布局最好，基本没有大的缺点。
+
+
+<script>
+<!-- 6. -->
+	var arr = [1,2,3,4,5];
+	for(var i in arr) {
+		$('<button>button</button>').appendTo('body').click(function() {
+			alert(arr[i])
+		})
+	}
+	结果：出现5个button  每个button点击都是5
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas--HTML5新特性</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3">Your brower does not support the canvas element</canvas>
+	<script>
+		let c = document.getElementById('myCanvas');
+		/*画一个圆形*/
+		// var cxt = c.getContext('2d');
+		// cxt.fillStyle = "#FF0000";
+		// cxt.beginPath();
+		// cxt.arc(70,18,15,0,Math.PI*2,true);
+		// cxt.closePath();
+		// cxt.fill();
+
+
+		/*绘制渐变背景*/ 
+		// let cxt = c.getContext('2d');
+		// let grd = cxt.createLinearGradient(0,0,175,50);
+		// grd.addColorStop(0,'#FF0000');
+		// grd.addColorStop(1,'#00FF00');
+		// cxt.fillStyle = grd;
+		// cxt.fillRect(0,0,175,50)
+
+		/*把图片放置在画布上*/
+		let cxt = c.getContext('2d');
+		let img = new Image();
+		img.src = 'flower.png';
+		cxt.drawImage(img,0,0)
+
+
+	</script>
+</body>
+</html>

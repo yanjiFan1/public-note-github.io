@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object属性的遍历</title>
+</head>
+<body>
+	参考： http://es6.ruanyifeng.com/#docs/object <br>
+	1. for...in <br>
+		for...in循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。<br>
+	2. Object.keys(obj)<br>
+		Object.keys返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。<br>
+	3. Object.getOwnPropertyNames(obj)<br>
+		Object.getOwnPropertyNames返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。<br>
+	4. Object.getOwnPropertySymbols(obj)<br>
+		Object.getOwnPropertySymbols返回一个数组，包含对象自身的所有 Symbol 属性的键名。<br>
+	5. Reflect.ownKeys(obj)<br>
+		Reflect.ownKeys返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举<br>
+
+	以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。<br>
+
+	首先遍历所有数值键，按照数值升序排列。<br>
+	其次遍历所有字符串键，按照加入时间升序排列。<br>
+	最后遍历所有 Symbol 键，按照加入时间升序排列。<br>
+<script>
+	let obj = {
+		name:'yanji',
+		age:25,
+		like:'read,playGame',
+		[Symbol()]:123,
+	}
+
+	for(let p in obj) {
+		console.log('法一:' + p);
+	}
+
+	console.log('法二：start')
+	console.log(Object.keys(obj))
+	console.log('法二：end')
+
+	console.log('法三：start')
+	console.log(Object.getOwnPropertyNames(obj))
+	console.log('法三：end')
+
+	console.log('法四：start')
+	console.log(Object.getOwnPropertySymbols(obj))
+	console.log('法四：end')
+
+	console.log('法五：start')
+	console.log(Reflect.ownKeys(obj))
+	console.log('法五：end')
+
+</script>
+</body>
+</html>

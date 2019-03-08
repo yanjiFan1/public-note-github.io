@@ -35,5 +35,17 @@
 		<div style="height:20%">模块四</div>
 		<div style="height:20%">模块五</div>
 	</div>
+	<script>
+		function Person() {
+			debugger
+			Person.prototype.name = 'yanji';
+			Person.prototype.say = function() {
+				alert(this.name)
+			}
+
+		}
+		Person.prototype.friends = ['kang'];
+		var person1 = new Person();
+	</script>
 </body>
 </html>

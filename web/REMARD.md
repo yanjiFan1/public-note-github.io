@@ -57,11 +57,14 @@ web性能优化
 34:problem34--- json和二进制的转换 参考:arrayBuffer  https://www.kancloud.cn/kancloud/javascript-standards-reference/46517
 35:problem35--- 字符串和数组，对象转换  数组和对象转换  参考:https://www.kancloud.cn/kancloud/javascript-standards-reference/46517
 36.problem36---@1模块化的异步加载怎样做？@2图片加载完的时候会执行吗？@3window.onload执行时间？等 https://mp.weixin.qq.com/s/PQ0E3UWYLcryXRKdKSg0OQ
-37.problem37---熟悉前后端交互原理，对 HTTP 请求有一定深入的理解, 栈溢出
+37.problem37---熟悉前后端交互原理，对 HTTP 请求有一定深入的理解, 栈溢出  参考： https://wangzitian0.github.io/2017/06/16/HTTP-best-practice-RESTful/ （HTTP协议的最佳实践RESTful）
 38.problem38---js  递归方法等其他方法；   https://www.jianshu.com/p/ca514efd3830
 39.problem39-- 表单提交 (react vue js)
-39.problem40-- flex布局 http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
-40.
+40.problem40-- flex布局 http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+
+
+react篇
+1.problemReact1--高阶组件，高阶函数
 
 
 
@@ -124,3 +127,6 @@ ptypes  职位类别id数组  [01,0102,010203]
 	这一块我也是单纯有个想法。我遇到的大牛，不仅对自己的领域非常了解，对其他的领域也有所认知。这是一种深层次的帮助——通过理解别的领域的方案，从而反哺自身。所以学习其他的语言，研究其他开发的理念，对前端的开发都是有帮助的。
 
 	以上这五点要是都能做到，不说成为大神，养家糊口、自信爆棚应该还是可以期望的。
+
+
+	chrome插件：  Infinity

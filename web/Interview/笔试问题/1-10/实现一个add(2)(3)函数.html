@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现一个add(2)(3)函数</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	// Number1：使用 arguments，判断参数输入，如果没有参数输入的话，就返回总和，而不是返回函数
+	function add(x) {
+		let res = 0;
+		res = res + x;
+		return function temp(y) {
+			if(arguments.length === 0) {
+				return res
+			} else {
+				res = res + y
+				return temp
+			}
+		}
+	}
+		
+	add(1)(2)(3)()  //6
+	console.log(add(1)(2)(3)() )
+
+	// Number2:重写add函数的toString和 valueOf方法
+	function add1(x) {
+		let res = 0;
+		res = res + x;
+		var temp = function(y) {
+			res = res + y;
+			return temp
+		}
+		temp.toString = temp.valueOf = function() {
+			return res;
+		}
+		return temp
+	}
+
+	add1(1)(2)(3)   //6
+	console.log(add1(1)(2)(3))	
+
+	</script>
+	
+
+</body>
+</html>

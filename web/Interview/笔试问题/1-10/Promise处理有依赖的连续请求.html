@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise处理有依赖的连续请求---Async/Await的用法</title>
+</head>
+<body>
+	参考：
+	1. https://juejin.im/post/5b1962616fb9a01e7c2783a8
+	2. https://blog.csdn.net/zhaofeiweb/article/details/84583395
+
+	let request = function(url,data) {
+		retrun new Promise(function(resolve,reject) {
+			$.ajax({
+				url:url,
+				contentType:'json',
+				data:data,
+				success:function(resData) {
+					resolve(resData)
+				}
+			})
+		})
+	}
+
+	request(url,{}).then(functin(response1) {
+		return request(url,{params}).then(function(response2){
+			return request(url,params)
+		})
+	})
+	
+
+
+	方法二：
+	function noErrorAxios(axios) {
+	    return new Promise(reslove => {
+	        axios.then(reslove).catch(err => reslove())
+	    })
+	}
+	
+	最直接:
+	ajax('/prefix/entity1/action1',null, function(resp){
+	     //do something on response
+	     someData.attr1 = resp.attr1;
+	}).then(
+	     ajax('/prefix/entity2/action2', someData, function(resp){
+	          //do something on response
+	     }
+	).then(
+	     initVue() ;
+	).then(
+	     //do  something else
+	)
+
+	
+	1、Async/Await简介
+
+	async/await是写异步代码的新方式，优于回调函数和Promise。
+	async/await是基于Promise实现的，它不能用于普通的回调函数。
+	async/await与Promise一样，是非阻塞的。
+	async/await使得异步代码看起来像同步代码，再也没有回调函数。但是改变不了JS单线程、异步的本质。
+
+	！！！：
+	你很可能遇到过这样的场景，调用promise1，使用promise1返回的结果去调用promise2，然后使用两者的结果去调用promise3。你的代码很可能是这样的:
+	const makeRequest = () => {
+	  return promise1()
+	    .then(value1 => {
+	      return promise2(value1)
+	        .then(value2 => {        
+	          return promise3(value1, value2)
+	        })
+	    })
+	}
+	
+	使用async/await的话，代码会变得异常简单和直观
+	const makeRequest = async () => {
+	  const value1 = await promise1()
+	  const value2 = await promise2(value1)
+	  return promise3(value1, value2)
+	}
+
+
+
+
+
+</body>
+</html>

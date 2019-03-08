@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reduce</title>
+</head>
+<body>
+	定义：reduce() 方法对数组中的每个元素执行一个由您提供的reducer函数(升序执行) </br>
+	语法：arr.reduce(callback[, initialValue]) </br>
+	参数：callback</br>
+			执行数组中每个值的函数，包含四个参数：</br>
+			accumulator</br>
+			累计器累计回调的返回值; 它是上一次调用回调时返回的累积值，或initialValue（见于下方）。</br>
+			currentValue</br>
+			数组中正在处理的元素。</br>
+			currentIndex可选</br>
+			数组中正在处理的当前元素的索引。 如果提供了initialValue，则起始索引号为0，否则为1。</br>
+			array可选</br>
+			调用reduce()的数组</br>
+		initialValue可选</br>
+			作为第一次调用 callback函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素。 在没有初始值的空数组上调用 reduce 将报错。</br>
+	用法：</br>
+		[0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array){</br>
+		  return accumulator + currentValue;</br>
+		});</br>
+
+	如果是空数组 使用reduce会报错</br>
+	<script>
+		// [].reduce((acc,crr) => acc + crr);  //报错信息--> Reduce of empty array with no initial value
+
+		// 为了解决空数组也可以使用reduce，我们会使用map配合reduce使用
+		var maxCallback2 = ( max, cur ) => {
+			debugger
+			Math.max( cur );	
+		}
+		let arr = [ { x: 22 }, { x: 42 } ]
+		arr.map( el => el.x )
+	       .reduce( maxCallback2, 0 );
+	    console.log(maxCallback2())
+	</script>
+</body>
+</html>
