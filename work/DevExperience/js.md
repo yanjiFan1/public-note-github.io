@@ -10,7 +10,7 @@ handleOk = () => {
 	flag = true;
 	if(ajax) {
 		ajax.success{
-			flag = false;
+			flag = false ;
 		}
 	}
 } 
