@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的解构赋值</title>
+</head>
+<body>
+	<script>
+		// 基本用法
+		// 例1
+		// let [a,b,c] = [1,2,3];
+		// console.log(a+'------------'+b+'------------'+c)
+
+		//例2
+		// let [head,...section] = [1,2,3,4];
+		// console.log(head+'-------------'+section)
+		// console.log(section)
+
+		// 例3
+		// let [x, , y] = [1, 2, 3];
+		// console.log(x,y)
+
+		// 对于 Set 结构，也可以使用数组的解构赋值。
+		// 例4
+		// let [m, n, o] = new Set(['a', 'b', 'c']);
+		// console.log(m,n,o);
+
+		// 例5
+		// let obj = {
+		//     p: [
+		//       'Hello',
+		//       { y: 'World' }
+		//     ]
+		// };
+		// let { p, p: [x, { y }] } = obj;
+		// console.log(p,x,y)
+
+		// 例6
+		// function add([x,y]){
+		// 	return x + y;
+		// }
+
+		// add([1, 2]);
+
+		//例7
+		// let x = 3;
+		// let y = 2;
+		// [x, y] = [y, x]
+		// console.log(x,y)
+
+		// 例8
+		let jsonData = {
+		    id: 42,
+		    status: "OK",
+		    data: [867, 5309]
+		};
+
+		let { id, status, data: number } = jsonData;
+
+		console.log(id, status, number);
+
+	</script>
+</body>
+</html>

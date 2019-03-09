@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" manifest="demo.appcache">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype 对象</title>
+</head>
+<body>
+	<div><a href="https://javascript.ruanyifeng.com/oop/prototype.html">参考地址</a></div>
+	<mark>111</mark>
+	<script>
+			
+		function Cat (name, color) {  //构造函数
+			this.name = name;
+			this.color = color;
+			this.meow = function () {
+			    console.log('喵喵');
+			};
+		}
+
+		function Animal(name) {
+			this.name = name;
+		}
+		/*构造函数的缺点*/
+		// 例1
+		// var cat1 = new Cat('大毛', '白色');
+
+		// console.log(cat1.name)
+		// console.log(cat1.color)
+
+		//例2
+		// var cat1 = new Cat('大毛', '白色');
+		// var cat2 = new Cat('二毛', '黑色');
+		// console.log(cat1.meow === cat2.meow);  //false  解决这个办法就是使用prototype
+
+		/*prototype 属性的作用*/
+		// 例3 JavaScript 规定，每个函数都有一个prototype属性，指向一个对象。
+		// function f() {}
+		// console.log(typeof f.prototype)	 //object
+
+		// 例4 !!!Animal.prototype 是实例cat1和cat2的原型对象
+		// Animal.prototype.color = 'white';
+
+		// var cat1 = new Animal('大毛');
+		// var cat2 = new Animal('二毛');
+		// console.log(cat1.color)
+		// console.log(cat2.color)
+
+		// 例5 原型对象的属性不是实例对象自身的属性。只要修改原型对象，变动就立刻会体现在所有实例对象上
+		// Animal.prototype.color = "yellow";
+		// var cat1 = new Animal('大毛');
+		// var cat2 = new Animal('二毛');
+		// console.log(cat1.color) //yellow
+		// console.log(cat2.color) //yellow
+
+		// 例6 如果实例对象自身就有某个属性或方法，它就不会再去原型对象寻找这个属性或方法。 
+		// Animal.prototype.color = "yellow";
+		// var cat1 = new Animal('大毛');
+		// var cat2 = new Animal('二毛');
+		// cat1.color = 'black'
+		// console.log(cat1.color) //black
+		// console.log(cat2.color) //yellow
+
+		/*原型链 JavaScript 规定，所有对象都有自己的原型对象（prototype）。一方面，任何一个对象，都可以充当其他对象的原型；另一方面，由于原型对象也是对象，所以它也有自己的原型。因此，就会形成一个“原型链”（prototype chain）：对象到原型，再到原型的原型……*/ 
+		//原型链的尽头就是null(面试)
+		// 例7
+		// var MyArray = function() {};
+
+		// MyArray.prototype = new Array();
+		// MyArray.prototype.constructor = MyArray;
+
+		// var mine = new MyArray();
+		// mine.push(1, 2, 3)
+		// console.log(mine.length)
+		// console.log(mine instanceof Array)
+
+		/*constructor 属性*/
+		// 例8
+		function P() {};
+		console.log(P.prototype.constructor === P)  //true
+		var p = new P()
+		console.log(p.constructor === P) //true
+		console.log(p.constructor === P.prototype.constructor) //true
+		console.log(p.hasOwnProperty('constructor'));
+	</script> 
+</body>
+</html>

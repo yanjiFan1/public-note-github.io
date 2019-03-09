@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const命令</title>
+	<style>
+		ul,li{
+			list-style: none;
+		}
+		fieldset,ul{
+			padding: 15px;
+			margin-bottom: 10px;
+		}
+		fieldset:nth-child(2n-1) ul{
+			border:2px solid #87e8de;
+		}
+		fieldset:nth-child(2n) ul{
+			border:2px solid #d3adf7;
+		}
+	</style>
+</head>
+<body>
+	<ruby>
+	 	烟祭<rt>SmokeFestival</rt>
+	</ruby>
+	<figure>
+	    <figcaption>let和const命令<time>15:34</time></figcaption>
+	</figure>
+	<fieldset>
+	    <legend>不存在变量提升</legend>
+	    <ul cite="http://es6.ruanyifeng.com/#docs/let">
+			<li>// var 的情况</li>
+			<li>console.log(foo); // 输出undefined</li> 
+			<li>var foo = 2;</li> </br>
+			<li>// let 的情况</li> 
+			<li>console.log(bar); // 报错ReferenceError</li> 
+			<li>let bar = 2;</li> 
+	    </ul>
+	</fieldset>
+	<fieldset>
+	    <legend>暂时性死区（temporal dead zone，简称 TDZ）</legend>
+	    <ul cite="http://es6.ruanyifeng.com/#docs/let">
+			<li>var tmp = 123;</li>
+			<li>if (true) {</li> 
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;tmp = 'abc'; // ReferenceError</li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;let tmp;</li> 
+			<li>}</li> 
+	    </ul>
+	</fieldset>
+	<fieldset>
+	    <legend>ES6 的块级作用域 </legend>
+	    <ul cite="http://es6.ruanyifeng.com/#docs/let">
+			<li>function f1() {</li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;let n = 5;</li> 
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;if (true) {</li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let n = 10;</li> 
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;}</li> 
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;console.log(n); // 5</li> 
+			<li>}</li> 
+	    </ul>
+	</fieldset>
+	<script>
+		/*例子1---let命令只在let命令所在的代码块内有效。*/
+		// {
+		// 	let a = 10;
+		// 	var b = 1;
+
+		// }
+		// //console.log(a)  //ReferenceError: a is not defined
+		// console.log(b)  //1
+
+		// //引申出1      let 适合在for循环
+		// for(let i = 0; i < 10; i++) {
+		// 	//..
+		// }
+		// //console.log(i);    // ReferenceError: i is not defined
+
+		// //引申出2      let 适合在for循环----如果是var
+		// var a1 = [];
+		// for(var i = 0; i < 10; i++) {
+		// 	a1[i] = function() {
+		// 		console.log(i);
+		// 	};
+		// }
+		// a1[6]();  //10
+
+		// //引申出3      let 适合在for循环----如果是var
+		// var a2 = [];
+		// for (let i = 0; i < 10; i++) {
+		//     a2[i] = function () {
+		//       console.log(i);
+		//     };
+		// }
+		// a2[6](); // 6
+
+		// //引申4 for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。
+		// for (let i = 0; i < 3; i++) {
+		//     let i = 'abc';
+		//     console.log(i); //上面代码正确运行，输出了 3 次abc。这表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域。
+		// }
+
+
+	</script>
+</body>
+</html>
