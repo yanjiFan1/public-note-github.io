@@ -25,7 +25,22 @@
 		}
 
 		//common
-		test1();
+		// test1();
+
+
+		class A {
+			init() {
+				console.log('1');
+			}
+		}
+
+		let target = new A();
+		A.protoype.init = () => {
+			console.log('2')
+		}
+		target.init();
+
+		// 输出结果：Cannot set property 'init' of undefined
 
 	</script>
 </body>

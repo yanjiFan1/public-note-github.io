@@ -16,7 +16,11 @@
 @13.简书 https://www.jianshu.com/
 @14.知乎 https://www.zhihu.com/signup?next=%2F
 @15 github https://github.com
-
+@16 learnku社区  https://learnku.com/signup 
+@17 JavaScript社区http://ourjs.com/bbs/JavaScript
+@17 JavaScript社区1 ruby-China  https://ruby-china.org/
+@18. vue中文社区 https://www.vue-js.com
+@18. node中文社区 https://cnodejs.org/
 
 书籍：
 1.数据结构
@@ -26,15 +30,20 @@
 博客地址：
 @1 紫陌博客：https://github.com/laizimo star-800
 @2 廖雪峰 https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344997235247b53be560ab041a7b10360a567422a78000
-@3. 阮一峰：http://www.ruanyifeng.com/blog/developer/
+@3.阮一峰：http://www.ruanyifeng.com/blog/developer/
 @4 淘宝前端团队(FED) http://taobaofed.org/blog
+@5.私人blog https://blog.suzper.com/2016/08/07/Hexo%E4%B8%AD%E8%AE%B2hexo/
 
 工具地址：
 1.使用Benchmark.js和jsPerf分析代码性能  https://segmentfault.com/a/1190000003486676
 2.bug监控fundebug： https://docs.fundebug.com
-3.loadsh(js方法库): https://www.lodashjs.com/
-4. canIuse(查兼容性)  https://caniuse.com/
+3. canIuse(查兼容性)  https://caniuse.com/
+4. chrome插件：  Infinity
+5. easy-mock
 
+js工具库
+1. underscore http://www.bootcss.com/p/underscore/
+2. loadsh(js方法库): https://www.lodashjs.com/
 
 
 

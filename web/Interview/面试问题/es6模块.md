@@ -1,7 +1,7 @@
 es6--es2015 参考：http://es6.ruanyifeng.com/
 1.let const命令
 2.变量的解构赋值
-3.字符串的扩展
+3.字符串的扩展  模板字符串(` `)
 4.正则的扩展
 5.数值的扩展
 6.函数额扩展
@@ -17,8 +17,6 @@ es6--es2015 参考：http://es6.ruanyifeng.com/
 16 Class
 17.Module
 18 Reflect
-
-
 
 拓展：参考：https://tuobaye.com/2018/11/27/%E7%BB%86%E8%A7%A3JavaScript-ES7-ES8-ES9-%E6%96%B0%E7%89%B9%E6%80%A7/
 	es7(es2016)
@@ -150,3 +148,8 @@ es6--es2015 参考：http://es6.ruanyifeng.com/
 			// "T"
 			String.raw`\u{54}`
 			// "\u{54}"
+
+
+		es10(es2019)   ---> 还没有全部覆盖(2019/3/12)  参考：https://mp.weixin.qq.com/s/b3oHxsidGHtnv0U1lYashg
+		1.新添加一个原始类型 BigInt
+		2.string.prototype.matchAll()

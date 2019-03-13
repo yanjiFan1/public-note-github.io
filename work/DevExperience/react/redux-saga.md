@@ -1,3 +1,5 @@
+官方文档：https://redux-saga-in-chinese.js.org/docs/introduction/BeginnerTutorial.html
+
 初学redux saga，
 前提是关于数据操作
 1.请求接口的数据，我们会dispatch一个方法，然后需要在saga中进行监听，redux不需要进行监听，否则会多渲染一次

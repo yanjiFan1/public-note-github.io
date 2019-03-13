@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浅拷贝和深拷贝</title>
+</head>
+<body>
+	<a href="https://juejin.im/post/5abb55ee6fb9a028e33b7e0a">参考文档</a>
+	<script>
+		// 实现浅拷贝
+		// 浅克隆函数
+		function shallowClone(o) {
+		  const obj = {};
+		  for ( let i in o) {
+		    obj[i] = o[i];
+		  }
+		  return obj;
+		}
+		// 被克隆对象
+		const oldObj = {
+		  a: 1,
+		  b: [ 'e', 'f', 'g' ],
+		  c: { h: { i: 2 } }
+		};
+
+		const newObjQ = shallowClone(oldObj);
+		// 也可以使用 Object.assign()
+
+
+
+		// 主要看一下深拷贝
+		// 1. jSON.parse方法
+
+		const oldObj = {
+			a:1,
+			b:['e','f','g'],
+			c:{ h:{i:2} }
+		};
+
+		console.log(JSON.stringify(oldObj))
+		const newObj = JSON.parse(JSON.stringify(oldObj));
+		console.log(newObj.c.h,oldObj.c.h);  //{i:2} {i:2}
+		console.log(newObj.c.h === oldObj.c.h);  //false
+
+		// 这个方法在解决绝大部分的使用场景，但是有很多坑
+			// 1. 无法实现对函数，RegExp等特殊对象的克隆
+			// 2. 会抛弃对象的constructor,所有的构造函数会指向Object
+			// 3. 对象有循环引用，会报错
+
+
+			2.
+
+		const isType = (obj, type) => {
+		  if (typeof obj !== 'object') return false;
+		  const typeString = Object.prototype.toString.call(obj);
+		  let flag;
+		  switch (type) {
+		    case 'Array':
+		      flag = typeString === '[object Array]';
+		      break;
+		    case 'Date':
+		      flag = typeString === '[object Date]';
+		      break;
+		    case 'RegExp':
+		      flag = typeString === '[object RegExp]';
+		      break;
+		    default:
+		      flag = false;
+		  }
+		  return flag;
+		};
+
+		const getRegExp = re => {
+		  var flags = '';
+		  if (re.global) flags += 'g';
+		  if (re.ignoreCase) flags += 'i';
+		  if (re.multiline) flags += 'm';
+		  return flags;
+		};
+
+		const clone = parent => {
+			//维护两个存储循环引用的数组
+			const parents = [];
+			const children = [];
+
+			cosnt _clone = parent => {
+				if(parent === null) return null;
+				if(typeof parent !== 'object') return parent;
+
+				let child, proto;
+				if(isType(parent,'Array')) {
+					//对数组做特殊处理
+					child = new RegExp(parent.source,getRegExp(parent));
+					if(parent.lastIndex) child.lastIndex = parent.lastIndex;
+				}else if (isType(parent, 'Date')) {
+			      // 对Date对象做特殊处理
+			      child = new Date(parent.getTime());
+			    } else {
+			      // 处理对象原型
+			      proto = Object.getPrototypeOf(parent);
+			      // 利用Object.create切断原型链
+			      child = Object.create(proto);
+			    }
+
+			       // 处理循环引用
+			    const index = parents.indexOf(parent);
+
+			    if (index != -1) {
+			      // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
+			      return children[index];
+			    }
+			    parents.push(parent);
+			    children.push(child);
+
+			    for (let i in parent) {
+			      // 递归
+			      child[i] = _clone(parent[i]);
+			    }
+
+			    return child;
+
+
+			}
+
+		}
+
+
+
+
+
+
+		// lodash中的深拷贝----cloneDeepWith
+			
+
+	</script>
+</body>
+</html>

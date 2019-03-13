@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>splice</title>
+	</head>
+	<body>
+		splice 和 slice的区别
+			slice(begin,end) 是指定在一个数组中的元素创建一个新的数组，即原数组不会变
+				!!!方法返回一个新的数组对象，这一对象是一个由 begin和 end（不包括end）决定的原数组的浅拷贝。原始数组不会被改变
+				两个参数：：
+					begin::从该索引处开始提取原数组中的元素（从0开始）。
+					end::在该索引处结束提取原数组元素（从0开始）
+
+			splice 是JS中数组功能最强大的方法,它能够实现对数组元素的删除，插入，替换操作，返回值为被操作的值
+
+
+		<script>
+			let arr = [1,2,3,4,'a','b','v'];
+			console.log(arr.splice(2,2))  //删除  [3,4]
+
+			console.log(arr.splice(0,0,345))
+			console.log(arr)
+
+			console.log(arr.splice(3,2,'aa','bb'))
+			console.log(arr)
+
+		</script>
+	</body>
+	</html>	
