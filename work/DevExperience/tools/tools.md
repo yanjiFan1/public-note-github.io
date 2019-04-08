@@ -21,12 +21,15 @@ https://github.com/zhaoxiaofan669/zhaoxiaofan669.github.io/tree/master/baojia/in
 https://zhaoxiaofan669.github.io/baojia/index.html
 
 
-
+	
 web使用工具
 1.sublime text3   http://www.sublimetextcn.com/
-参考：@1https://blog.csdn.net/wxl1555/article/details/69941451
+参考：@1 Sublime Text 3安装及常用插件安装 https://blog.csdn.net/wxl1555/article/details/69941451
 @2https://blog.csdn.net/qq_25506089/article/details/80346926
 @3https://www.cnblogs.com/weiqinl/p/6903261.html
+
+
+
 
 2.webstrom   https://www.jetbrains.com/webstorm/
 https://blog.csdn.net/xiongyouqiang/article/details/80771193  破解方法
@@ -43,6 +46,8 @@ https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fwww.google.com.hk%2
 7.HTML Snippets
 8.JS JSX Snippets
 9.ESLint
+
+
 (可以使用)
 10.Bracket Pair Colorizer
 11.cssrem
@@ -76,6 +81,11 @@ https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fwww.google.com.hk%2
 39.vscode-styled-jsx
 40.VueHelper
 
+vue使用
+41 vue 2 Snippets
+42 vue VSCode Snippets
+
+
 @2  vs -> 文件->首选项->设置-> 输入  search:Follow Symlinks ：false   默认是true  有点卡   设置为falseJuin不是很卡
 
 4 Hbuilder http://dcloud.io/
@@ -95,3 +105,8 @@ start /d "D:\yanjitool\weChat\" WeChat.exe
 
 exit
 上面代码中双引号中为微信安装路径，开几个就复制几遍中间代码，把代码保存为.bat文件格式
+
+2. chrome 翻墙软件  setUpVpn  https://www.jianshu.com/p/0e082eebb19c
+
+
+2. 蓝灯 https://github.com/getlantern/download
