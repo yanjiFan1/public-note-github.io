@@ -47,3 +47,6 @@ $0 挺好玩 -是你在elements中设置id的那个div
 
 7. 浅谈Object.prototype.toString.call()方法
 https://www.jianshu.com/p/585926ae62cc
+
+8.setTimeout 和  promise 哪个先执行  答案：setTimeout先执行
+https://segmentfault.com/q/1010000009811652

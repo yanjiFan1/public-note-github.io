@@ -6,3 +6,6 @@ https://segmentfault.com/a/1190000013044682
 
 2.key值必须是唯一的，否认会有警告，很难受。  参考： https://blog.csdn.net/Dream_xun/article/details/85064277
 
+3.从路由获取参数  need_close---->路由参数
+this.needclose = this.$route.query.need_close
+
