@@ -9,3 +9,5 @@ https://segmentfault.com/a/1190000013044682
 3.从路由获取参数  need_close---->路由参数
 this.needclose = this.$route.query.need_close
 
+
+4.多端开发 uniapp https://uniapp.dcloud.io/

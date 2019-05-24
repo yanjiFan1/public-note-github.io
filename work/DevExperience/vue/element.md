@@ -16,3 +16,7 @@
 	上面的写法可以完美解决
 
  2. vue 行内样式的写法  https://blog.csdn.net/xukongjing1/article/details/81584281
+
+ 3. 编辑器集合  https://www.cnblogs.com/wisewrong/p/8985471.html
+ 	vue2-management-platform https://suweiteng.github.io/vue2-management-platform/#/editor
+ 	vue-quill-editor  https://github.com/surmon-china/vue-quill-editor
