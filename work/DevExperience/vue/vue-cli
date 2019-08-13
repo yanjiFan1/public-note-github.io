@@ -1,0 +1,16 @@
+官方网站： https://cli.vuejs.org/zh/  里面有快速创建项目
+
+创建一个项目
+1. npm install @vue-cli -g
+2. npm install -g @vue/cli-service-global
+3. npm create 项目名称
+4. 
+
+
+vue ui 项目可视化---命令以图形化界面创建和管理项目(===  是等价于的意思)
+vue add @vue/eslint 添加npm包  === vue add @vue/cli-plugin-eslint
+vue add apollo === vue add vue-cli-plugin-apollo
+vue add @foo/bar === vue add @foo/vue-cli-plugin-bar
+vue add @vue/eslint --config airbnb --lintOn save
+vue add router
+vue add vuex

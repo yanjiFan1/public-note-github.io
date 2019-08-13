@@ -47,6 +47,19 @@ js工具库
 1. underscore http://www.bootcss.com/p/underscore/
 2. loadsh(js方法库): https://www.lodashjs.com/
 
+规范
+nec  css规范 http://nec.netease.com/library/101021
+
+使用过的技术：
+1.react
+2.vue
+	2.1 vant
+	2.2 element
+	2.3 
+3.html5,css3
+4.
+5.支付宝小程序
+6.
 
 
 

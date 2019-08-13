@@ -15,14 +15,14 @@
 	使用 cnpm install express
 
 
-	!!!第二种办法  nvm 是一个 NPM 源管理器   https://www.jianshu.com/p/171ec231ced4
-	列出可用的源：  nvm ls
+	!!!第二种办法  nrm 是一个 NPM 源管理器   https://www.jianshu.com/p/171ec231ced4 https://blog.csdn.net/anway12138/article/details/79455224
+	列出可用的源：  nrm ls
 
-	切换： nvm use taobao Registry has been set to: http://registry.npm.taobao.org/
-	增加源： nvm add <registry> <url> [home]
-	删除源：nvm del <registry>
-	测试速度：nvm test
-	查看远程node版本 	nvm ls available
+	切换： nrm use taobao Registry has been set to: http://registry.npm.taobao.org/
+	增加源： nrm add <registry> <url> [home]
+	删除源：nrm del <registry>
+	测试速度：nrm test
+	查看远程node版本 	nrm ls available
 
 
 

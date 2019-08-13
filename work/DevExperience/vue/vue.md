@@ -11,3 +11,10 @@ this.needclose = this.$route.query.need_close
 
 
 4.多端开发 uniapp https://uniapp.dcloud.io/
+
+5.如何引入外部数据
+
+5.1 外部资源--demo.js  export const demo = []
+5.2.1 vue文件 通过 import { demo } from './demo.js'
+5.2.2 vue文件 在data中定义demo变量，然后在template中使用demo这个变量
+!!！在vue文件中如果不定义demo这个变量页面会报错

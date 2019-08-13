@@ -38,3 +38,9 @@ overflow:hidden;
 7.左滑删除  
 http://www.cnblogs.com/woodk/p/5360494.html
 https://www.jb51.net/article/136221.htm   较好一点	
+
+8.解决ios上下有拖动的感觉
+box-sizing: border-box;
+overflow-x: auto;
+overflow-y: hidden;
+-webkit-overflow-scrolling: touch; 

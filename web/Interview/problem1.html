@@ -11,7 +11,7 @@
 		})()*/
 		/*1、利用ES6 Set去重（ES6中最常用）*/
 		function unique1(arr) {
-			return Array.from(new Set(arr))   //[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {}, {}]
+			return Array.from(new Set(arr))   //[1, "true", true, false, undefined, null, NaN, "NaN", 0, "a", {}, {}]
 		}
 		/*2.利用for嵌套for，然后splice去重（ES5中最常用）*/
 		function unique2(arr) {
@@ -23,7 +23,7 @@
 					}
 				}
 			}
-			return arr;  //[1, "true", 15, false, undefined, NaN, NaN, "NaN", "a", {…}, {…}]     //NaN和{}没有去重，两个null直接消失了
+			return arr;  //[1, "true", false, undefined, NaN, NaN, "NaN", "a", {…}, {…}]     //NaN和{}没有去重，两个null直接消失了
 		}
 		/*3.利用indexOf去重*/
 		function unique3(arr) {
@@ -39,7 +39,7 @@
 				}
 			}
 
-			return array;  // [1, "true", true, 15, false, undefined, null, NaN, NaN, "NaN", 0, "a", {…}, {…}]  //NaN、{}没有去重
+			return array;  // [1, "true", true, false, undefined, null, NaN, NaN, "NaN", 0, "a", {…}, {…}]  //NaN、{}没有去重
 		}
 
 		/*4 利用sort()*/
@@ -56,7 +56,7 @@
 					array.push(arr[i]);
 				}
 			}
-			return array;  // [0, 1, 15, "NaN", NaN, NaN, {…}, {…}, "a", false, null, true, "true", undefined]      //NaN、{}没有去重
+			return array;  // [0, 1, "NaN", NaN, NaN, {…}, {…}, "a", false, null, true, "true", undefined]      //NaN、{}没有去重
 		}
 
 		/*五、利用对象的属性不能相同的特点进行去重*/
@@ -69,7 +69,6 @@
 			var array = [];
 			var obj = {};
 			for(var i = 0; i < arr.length; i++) {
-				debugger
 				if(!obj[arr[i]]) {
 					array.push(arr[i])
 					obj[arr[i]] = 1;
@@ -77,7 +76,7 @@
 					obj[arr[i]] ++
 				}
 			}
-			return array;  //[1, "true", 15, false, undefined, null, NaN, 0, "a", {…}]    //两个true直接去掉了，NaN和{}去重
+			return array;  //[1, "true", false, undefined, null, NaN, 0, "a", {…}]    //两个true直接去掉了，NaN和{}去重
 		}
 
 		/*六、利用includes*/
@@ -92,21 +91,21 @@
 					array.push(arr[i])
 				}
 			}
-			return array  //[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {…}, {…}]     //{}没有去重
+			return array  //[1, "true", true, false, undefined, null, NaN, "NaN", 0, "a", {…}, {…}]     //{}没有去重
 		}
 
 		/*七、利用hasOwnProperty !!!所有的去重了*/  
 		function unique7(arr) {
 			var obj = {};
 			return arr.filter(function(item,index,arr) {
-				return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true);  //[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {…}] 所有的都去重了
+				return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true);  //[1, "true", true, false, undefined, null, NaN, "NaN", 0, "a", {…}] 所有的都去重了
 			})
 		}
 
 		/*八、利用filter*/ 
 		function unique8(arr) {
 			return arr.filter(function(item, index, arr) {
-				return arr.indexOf(item, 0) === index;  //[1, "true", true, 15, false, undefined, null, "NaN", 0, "a", {…}, {…}]
+				return arr.indexOf(item, 0) === index;  //[1, "true", true, false, undefined, null, "NaN", 0, "a", {…}, {…}]
 			});
 		}
 
@@ -126,7 +125,7 @@
 				}
 			}
 			loop(len - 1);
-			return array; //[1, "a", "true", true, 15, false, 1, {…}, null, NaN, NaN, "NaN", 0, "a", {…}, undefined]
+			return array; //[1, "a", "true", true, false, 1, {…}, null, NaN, NaN, "NaN", 0, "a", {…}, undefined]
 		}
 
 		/*十、利用Map数据结构去重*/
@@ -155,6 +154,19 @@
 		}
 
 		/*十三. lodash _.uniq([2, 1, 2]);// => [2, 1]   需要引入lodash*/
+
+		// 14.利用for嵌套for，然后splice去重（ES5中最常用）JSON.stringify----对象也会去重的(但是NaN会丢失掉)*/
+		function unique14(arr) {
+			for(var i = 0; i < arr.length; i++) {
+				for(var j = i + 1; j < arr.length; j++) {
+					if(JSON.stringify(arr[i]) == JSON.stringify(arr[j])) {
+						arr.splice(j,1);
+						j--;
+					}
+				}
+			}
+			return arr;  //[1, "true", false, undefined, NaN, NaN, "NaN", "a", {…}]     //全部去重(但是NaN会丢失掉---原因是NaN--JSON.stringify后是null)
+		}
 
 		// common
 		var arr = [1,1,'true','true',true,true,false,false,undefined,undefined,null,null,NaN,NaN,'NaN',0,0,'a','a',{},{}]

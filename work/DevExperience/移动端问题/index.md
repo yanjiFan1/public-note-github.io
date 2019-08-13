@@ -19,3 +19,7 @@ watch: {
     if (val) window.scrollTo(0, 0.1)
   }
 },
+
+4. 移动端适配flexible
+http://g.tbcdn.cn/mtb/lib-flexible/{{version}}/??flexible_css.js,flexible.js
+
