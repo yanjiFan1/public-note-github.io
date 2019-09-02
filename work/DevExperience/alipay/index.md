@@ -58,3 +58,22 @@ https://www.jianshu.com/p/a7bb1a826548
 后面的路径地址是需要转码的 !!! 转码工具 http://tool.chinaz.com/Tools/urlencode.aspxhttp://tool.chinaz.com/Tools/urlencode.aspx
 
 alipays://platformapi/startapp?appId=xxx&page=pages%2fgoodsDetail%2fgoodsDetail%3fgoodsCode%3d101549748
+
+11. 问题？ 页面跳转到页面中，页面不展示
+	回答：页面跳转层级问题，  经过处理，
+	处理之前：
+	if(getCurrentPages().length === 5) {
+      my.redirectTo('/pages/home/home');
+    } 
+    处理之后：
+	if(getCurrentPages().length >= 10) {
+      my.redirectTo('/pages/home/home');
+    } 
+    参考:: getCurrentPages().length改变这个长度的大小即可
+
+12. 
+通过钉钉等阿里项目跳转到小程序内部  
+alipays://platformapi/startapp?appId=2019052165320335&page=pages%2fgoodsDetail%2fgoodsDetail%3fgoodsCode%3d101554148
+
+13. 如何获取连接进来的标识  比如isShowCoupon = 1(下面连接经过编码)
+alipays://platformapi/startapp?appId=2019052165320335&page=pages/home/home%3fisShowCoupon%3d1

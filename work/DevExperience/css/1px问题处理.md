@@ -19,8 +19,6 @@
 }
 
 
-
-
 如何是border，进行处理
 .sku-good-pic {
   padding: relative;
@@ -49,4 +47,30 @@
   transform:scale(0.5);
   transform-origin: 0 0;
   border-radius:8rpx;
+}
+
+
+方案3
+.m-size-country-des{
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+.m-size-country-des::after{
+  content: ' ';
+  position: absolute;
+  pointer-events: none;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+  border: 0 solid #f5f5f5;
+  border-width: 2px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }

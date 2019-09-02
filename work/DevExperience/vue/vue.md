@@ -18,3 +18,5 @@ this.needclose = this.$route.query.need_close
 5.2.1 vue文件 通过 import { demo } from './demo.js'
 5.2.2 vue文件 在data中定义demo变量，然后在template中使用demo这个变量
 !!！在vue文件中如果不定义demo这个变量页面会报错
+
+6. 双击事件 @dblclick="aaaa"  这个需要在标签上添加

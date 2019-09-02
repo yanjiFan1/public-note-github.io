@@ -11,7 +11,7 @@ http://lantong0905.lofter.com/post/1cc723ff_8015fa1
 
 9关于github
 @1.教你如何在github上预览项目效果 https://blog.csdn.net/qq_25479327/article/details/78778282
-第一种方案（已验证）：
+第一种方案（已验证）：http://localhost:8001/index-cn
 http://htmlpreview.github.io/? + 打开你github上demo网页index.html
 第二中方案：(已验证)
 eg:
@@ -19,17 +19,12 @@ https://github.com/zhaoxiaofan669/zhaoxiaofan669.github.io/tree/master/baojia/in
 上面的链接是你打开的链接 改为：
 
 https://zhaoxiaofan669.github.io/baojia/index.html
-
-
 	
 web使用工具
 1.sublime text3   http://www.sublimetextcn.com/
 参考：@1 Sublime Text 3安装及常用插件安装 https://blog.csdn.net/wxl1555/article/details/69941451
 @2https://blog.csdn.net/qq_25506089/article/details/80346926
 @3https://www.cnblogs.com/weiqinl/p/6903261.html
-
-
-
 
 2.webstrom   https://www.jetbrains.com/webstorm/
 https://blog.csdn.net/xiongyouqiang/article/details/80771193  破解方法
@@ -112,3 +107,8 @@ exit
 2. 蓝灯 https://github.com/getlantern/download
 
 3. fiddler https://www.cnblogs.com/meitian/p/4997310.html
+
+2. jsPref https://jsperf.com/ 比较不同的JavaScript函数的执行速度
+
+
+谷歌访问助手 ---- 谷歌的一个插件（可进行网页访问）

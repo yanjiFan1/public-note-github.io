@@ -23,3 +23,7 @@ watch: {
 4. 移动端适配flexible
 http://g.tbcdn.cn/mtb/lib-flexible/{{version}}/??flexible_css.js,flexible.js
 
+5. 移动端适配问题
+  1. https://blog.csdn.net/wanshaobo888/article/details/75386409
+  2. postcss-px-to-viewport
+  3. postcss-pxtorem
