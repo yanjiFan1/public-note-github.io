@@ -35,6 +35,7 @@
 @3.阮一峰：http://www.ruanyifeng.com/blog/developer/
 @4 淘宝前端团队(FED) http://taobaofed.org/blog
 @5.私人blog https://blog.suzper.com/2016/08/07/Hexo%E4%B8%AD%E8%AE%B2hexo/
+@5.yezihaohao https://yezihaohao.github.io/
 
 工具地址：
 1.使用Benchmark.js和jsPerf分析代码性能  https://segmentfault.com/a/1190000003486676

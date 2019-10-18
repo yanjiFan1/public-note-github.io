@@ -37,3 +37,6 @@
 
 
 3. npm 或者使用 yarn     
+
+4. npm 命令
+https://www.cnblogs.com/blackgan/p/7828047.html

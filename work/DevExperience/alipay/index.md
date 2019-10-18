@@ -77,3 +77,108 @@ alipays://platformapi/startapp?appId=2019052165320335&page=pages%2fgoodsDetail%2
 
 13. 如何获取连接进来的标识  比如isShowCoupon = 1(下面连接经过编码)
 alipays://platformapi/startapp?appId=2019052165320335&page=pages/home/home%3fisShowCoupon%3d1
+
+
+14.小程序需要域名吗？
+是不需要的， 如果我们使用到webview的话，可以在H5白名单中配置就可以了。但是我们是需要服务器域名的，当然这个域名也是需要配置的（开发，测试，生产）
+
+
+15.支付宝数据埋点问题，
+我们可以使用支付宝小程序中的
+ 
+数据分析代码中：
+
+my.reportAnalytics('home_area2_pro',{
+    proidleft:proidright  //proidleft-key值，上传字段名   proidright-上传字段值
+})
+
+
+后台系统中如何配置（具体参考支付宝小程序中的事件管理）
+
+1.进入后台系统小程序模块
+
+2.进入数据分析模块
+
+3.进入事件管理模块-添加事件
+
+ 3.1 事件英文名，事件中文名（不能修改）   page-和小程序中的路由一致  element-元素，就是需要在代码中需要埋点的元素加个类，个人建议以md-开头，好区分 data-第一个值是字段名  第二值是字段对应的字段值（可以看考事件管理，有不同格式）
+
+4.在实时中—事件管理中查看埋点的情况
+
+5.在自定义分析中可以查看具体信息---每一个属性值（即上传的属性值，在分组一栏中可以查看）---具体情况在下面的table中
+
+记住！！！—事件中data模块  数据中需要设置string  否则在自定义分析中是拿不到属性值，无法分析。
+
+
+16.提交审核需要准备的资料
+
+1.版本号（自动生成）
+2.小程序服务区域
+3.小程序截图
+4.版本描述 
+5.客服设置 客服电话等三个
+6.测试账号（非必填）
+7.备注
+8.测试相关资料（非必填）
+
+基本信息
+1.小程序名称
+2.小程序英文名
+3.小程序简介
+4.小程序logo
+5.所属行业 
+6.营业执照号：
+7.营业执照名称 
+8.营业执照有效期（非必填）
+9。营业执照照片
+10.商户门头照
+11.小程序描述
+12.客服电话（非必填） 
+13.客服邮箱（非必填）
+
+
+17.缓存问题
+
+今天在切换环境的时候，  开发环境切换成测试环境
+
+之前用户已经登录我们的小程序，存在token，切换成测试环境的时候，生成一个新的token
+
+结果两个token冲突，导致页面存在一些问题
+
+
+18.
+支付宝小程序大小限制为3M ， node_modules计入大小
+
+19.
+支付宝小程序花呗分期接入  IDE版本需要升级到0.60 以上
+
+20. 花呗分期引入 需要订购插件
+https://docs.alipay.com/mini/plugin/plugin-order
+1 插件订购 
+
+https://fw.alipay.com/commodity/v2/ant/merchandise/merchandiseDetail.htm?merchandiseId=AM010401000000025653
+
+2 分期接入说明 
+
+https://docs.alipay.com/mini/introduce/antcreditpay-istallment
+
+3 分期技术对接文档 
+
+https://docs.open.alipay.com/277/105952/
+
+
+
+21.分享有礼 https://docs.alipay.com/mini/operation/share-with-benefit
+
+ 
+H5页面调用
+alipays://platformapi/startapp?
+appId=2018121862587354
+&page=pages%2Findex%2Findex&query=
+appId%3D
+XXXXXXXXXXXXXXXX
+%26
+shareTemplateId%3DV2
+XXXXXXXXXXXXXXXXXXXXXX
+
+22. 获取小程序唯一标识 my.getAuthCode 静默授权可以拿到

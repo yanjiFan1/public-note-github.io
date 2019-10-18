@@ -1,0 +1,19 @@
+1. 适配问题
+  1.原理
+  2.自己实现它
+  3.项目中如何配置(postcss-px-to-viewport后者postcss-torem)
+  4. meta viewport
+2. 1px
+    border 1px如何去实现它 scale
+    2.具体代码
+
+3. 如何解决土图片变形问题
+ 1. object-fit: contain
+ 2. width: 100%;
+ 	height: auto;
+ 	margin: 0 auto;
+ 3. width: auto;
+ 	height: 100%;
+ 	margin: auto 0;
+
+ 4.

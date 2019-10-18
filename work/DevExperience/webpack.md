@@ -10,3 +10,11 @@
 
 3.解决 FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory 问题
 https://blog.csdn.net/weixin_41196185/article/details/81114226
+
+4. webpack多文件入口 https://github.com/SHERlocked93/multi-entry-vue
+
+5. 请问webpack-dev-server与react-hot-loader两者的热替换有什么区别？
+
+区别在于webpack-dev-server自己的--hot模式只能即时刷新页面，但状态保存不住。因为React有一些自己语法(JSX)是HotModuleReplacementPlugin搞不定的。
+
+而hot-loader在--hot基础上做了额外的处理，来保证状态可以存下来
