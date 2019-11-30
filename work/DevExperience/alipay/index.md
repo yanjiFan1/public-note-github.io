@@ -2,6 +2,25 @@
 https://www.jianshu.com/p/328bc24d3f65
 https://openclub.alipay.com/club/history/read/7214
 
+url网址编码，解码
+http://www.bejson.com/enc/urlencode/
+
+外链：
+
+海淘商品详情页-     alipays://platformapi/startapp?appId=2019052165320335&page=pages%2fhtgoodsdetail%2fhtgoodsdetail%3fgoodsCode%3Dxxx%26goodSource=xx
+
+商品详情页- alipays://platformapi/startapp?appId=2019052165320335&page=pages%2fgoodsDetail%2fgoodsDetail%3fgoodsCode%3dxxx
+
+首页--   alipays://platformapi/startapp?appId=2019052165320335&page=pages/home/home?isShowCoupon=1&query=channel=1101
+
+收藏有礼
+
+my.navigateToMiniProgram({
+appId:'2018122562686742', // 收藏有礼小程序ID
+path: `pages/index/index?originAppId=小程序id&newUserTemplate=${this.data.templateId}` // 跳转链接
+})
+
+
 1.swiper组件应用，不能出来轮播图
 解决方案：swiper 组件加个类
 <swiper class="m-swiper"></swiper>
@@ -181,4 +200,34 @@ XXXXXXXXXXXXXXXX
 shareTemplateId%3DV2
 XXXXXXXXXXXXXXXXXXXXXX
 
-22. 获取小程序唯一标识 my.getAuthCode 静默授权可以拿到
+22. 获取小程序唯一标识  my.getAuthCode 静默授权可以拿到
+
+API getInfo
+basement.user.getInfo().then(user => {
+  this.setData(userInfo: user);
+}).catch(console.error);
+
+userId  String  Basement 系统中的用户 ID
+displayName String  用户昵称
+avatar  String  头像链接
+createdAt String  注册时间
+lastSeenAt  String  最后访问时间
+
+
+
+23. 收藏有礼---- 运营配置
+alipay链接： 
+alipays://platformapi/startapp?appId=2018122562686742&page=pages/index/index?originAppId=2019052165320335&newUserTemplate=20190821000000224648
+
+my.navigateToMiniProgram({
+   appId:'2018122562686742', // 收藏有礼小程序ID
+   path: `pages/index/index?originAppId=小程序id&newUserTemplate=${this.data.templateId}` // 跳转链接
+})
+
+
+24.
+校验文件上传到 https://cdn.basestonedata.com/ 域名根目录下吧，小程序需要弄白名单
+
+
+！！！小程序常见问题
+https://developer.aliyun.com/article/717314?spm=a2c6h.12873581.0.0.4b8e11d5P60MwK&groupCode=alipay

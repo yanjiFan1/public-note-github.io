@@ -22,7 +22,7 @@ props和state的数据尽可能简单明了，扁平化。
 
 使用return null而不是CSS的display:none来控制节点的显示隐藏。保证同一时间页面的DOM节点尽可能的少。 -->
 
-
+3. class写法和hack形式
 
 
 

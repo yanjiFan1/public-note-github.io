@@ -6,7 +6,6 @@
 3. npm create 项目名称
 4. 
 
-
 vue ui 项目可视化---命令以图形化界面创建和管理项目(===  是等价于的意思)
 vue add @vue/eslint 添加npm包  === vue add @vue/cli-plugin-eslint
 vue add apollo === vue add vue-cli-plugin-apollo
