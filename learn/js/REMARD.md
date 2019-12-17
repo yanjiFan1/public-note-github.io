@@ -25,10 +25,13 @@ web性能优化 https://blog.csdn.net/fuzhongmin05/article/details/69397581
 7.正确理解Repaint和Reflow
 8.使用JSON格式进行数据交换
 9.减少cookie传输
-10使用CDN加速 Content Delivery Network 内容分发网络
+10. 使用CDN加速 Content Delivery Network 内容分发网络
 
 
 react性能优化
 
+
+经典面试题  Event Loop 
+https://mp.weixin.qq.com/s/XrHFFE7WFLIDMxyIZ8DvuA
 
 

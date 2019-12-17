@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map&forEach</title>
+</head>
+<body>
+	<h1>共同点</h1>
+	<ul>
+		<li>1.都是循环遍历数组中的每一项。</li>
+		<li>2.forEach() 和 map() 里面每一次执行匿名函数都支持3个参数：数组中的当前项item,当前项的索引index,原始数组input。</li>
+		<li>3.匿名函数中的this都是指Window。</li>
+		<li>4.只能遍历数组。</li>
+	</ul>
+	<h1>不同点</h1>
+	<div>
+		<h1>forEach: </h1>
+		<p>没有返回值。</p>
+	</div>
+	<div>
+		<h1>map</h1>
+		<p>map()返回一个新数组，原数组不会改变。</p>  
+	</div>
+	<script>
+		let a = [1, 2, 3]
+		let b = [4, 5, 6]
+		let c = a.map((item,index, all) => {
+			console.log(this)
+			return item = Math.pow(item, 2)
+		})
+
+		let d = b.forEach((item,index, all) => {
+			console.log(this)
+			return all[index] = Math.pow(item, 3)
+		})
+
+		console.log('map后的' + c)
+		console.log('map的' + a)
+		console.log('forEach后的' + d)
+		console.log('forEach的' + b)
+
+		// map实现原理
+		Array.prototype.fakeMap = function(fn) {
+			console.log(fn)
+			console.log(this)
+			if (typeof fn !== "function") {
+			 throw new TypeError(`${fn} is not a function`);
+			}
+		    let newArr = [];
+		    for (let i = 0; i < this.length; i++) {
+		        newArr.push(fn(this[i]))
+		    };
+		    return newArr;
+		}
+
+		let arr1 = ['bob', 'grex', 'tom'];
+		arr1.fakeMap((item, index, arr) => console.log(item, index, arr));
+
+
+		// forEach实现原理
+		Array.prototype.newForEach = function(fn) {
+			console.log(fn)
+		    for(let i=0; i<this.length; i++){
+		       fn(this[i], i, this)
+		    }      
+		}
+
+
+		let arr2 = [1,2,3]
+		arr2.newForEach((item, index, all) => {
+			console.log(item)
+			console.log(index)
+			console.log(all)
+		})
+
+	</script>
+</body>
+</html>

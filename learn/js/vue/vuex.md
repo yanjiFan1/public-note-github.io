@@ -1,0 +1,1 @@
+1. 中文官方文档： https://vuex.vuejs.org/zh/
