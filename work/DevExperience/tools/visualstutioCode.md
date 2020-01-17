@@ -59,6 +59,10 @@ vue使用
 react
 43 ES7 React/Redux/React-Native/JS snippets
 
+
+preview on Web Server // 实时预览效果
+
+
 路径问题
 1. Path Autocomplete 路径提示
 2. Path Intellisense 路径补全

@@ -14,6 +14,4 @@ eg： https://github.com/bailicangdu/vue2-elm
 
 
 
-
-
-
+4. vue实现一个大文件上传和断点续传 https://mp.weixin.qq.com/s/HdJmgGCvjJydfD_09eWV3g

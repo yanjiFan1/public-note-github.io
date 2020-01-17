@@ -23,8 +23,6 @@
 	forEach()允许callback更改原始数组的元素。map()返回新的数组。
 
 
-
-
 5. call和apply的区别
 
 	共同作用: 改变this指向
@@ -49,4 +47,3 @@
 	2.
 
 
- 	
