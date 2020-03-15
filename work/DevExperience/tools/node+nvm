@@ -14,3 +14,4 @@ npm view 包名 versions
 	
 nvm ls 查看当前版本
 nvm use 版本号，    使用node
+
