@@ -69,3 +69,6 @@ preview on Web Server // 实时预览效果
 
 
 @2  vs -> 文件->首选项->设置-> 输入  search:Follow Symlinks ：false   默认是true  有点卡   设置为falseJuin不是很卡
+
+
+快捷键： https://mp.weixin.qq.com/s/Yxgs2XmCVCei0QNY22V-Zg
