@@ -35,7 +35,22 @@ adb kill-server 杀死服务
 adb start-server 启动服务
 adb reconnect device 连接服务（如果是手机需要点击确定USB），如果是模拟器不用管
 
+6. AndroidStudio:* daemon not running; starting now at tcp:5037
+检查了端口。杀了端口等一系列操作做完还不行，最后发现是笔记本在连公司的网络时加了防火墙，关了即可
+
+7. 手机上可以启动项目，但是模拟器不能启动
+
+解决方案：
+1. adb devices显示模拟器  设备名字
+2. 在项目中执行  react-native run-android --deviced 设备名字
+
 
 工具： 
 1. docker https://docs.docker.com/compose/install/
 2. 
+
+
+网络端口占用
+https://blog.csdn.net/chaoge321/article/details/83827701
+netstat -aon|findstr "5037"  
+netstat -aon|findstr "5037"  
