@@ -18,3 +18,10 @@ git提交规范：dev目标分支，my自己的分支
 7.git checkout dev
 8.git merge my
 9.git push origin dev
+
+
+jenkins构建失败
+1.  
+错误： error posthtml-render@1.2.1: The engine "node" is incompatible with this module. Expected version ">=10". Got "8.16.0"
+解决方案： 使用命令： yarn config set ignore-engines true
+参考： https://jenkins.xiaoxiangyoupin.com/job/test-nginx/job/Cashloan/

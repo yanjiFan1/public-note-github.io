@@ -45,6 +45,17 @@ adb reconnect device 连接服务（如果是手机需要点击确定USB），�
 2. 在项目中执行  react-native run-android --deviced 设备名字
 
 
+8.https://www.jianshu.com/p/17f1218aada0
+
+9. gradle下载地址
+https://www.cnblogs.com/yaozhixiang/articles/10210812.html
+https://gradle.org/releases/
+https://services.gradle.org/distributions/
+
+10. 项目下android->gradle->wrapper->gradle-wrapper.properties里面可以更改gradle的下载版本
+distributionUrl=https\://services.gradle.org/distributions/gradle-5.2-all.zip
+
+
 工具： 
 1. docker https://docs.docker.com/compose/install/
 2. 
@@ -54,3 +65,7 @@ adb reconnect device 连接服务（如果是手机需要点击确定USB），�
 https://blog.csdn.net/chaoge321/article/details/83827701
 netstat -aon|findstr "5037"  
 netstat -aon|findstr "5037"  
+
+项目参考：
+
+https://www.jianshu.com/p/3ad0cb27f19b

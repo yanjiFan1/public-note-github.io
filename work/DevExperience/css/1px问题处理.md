@@ -157,3 +157,25 @@
         }
     }
 }
+
+
+方案5(这个方案还是挺好的---> meta可以去掉)
+(function(doc, win){
+  var docEl = document.documentElement
+  var dpr = window.devicePixelRatio || 1
+  var meta = document.createElement('meta')
+  var Scale = 1 / dpr
+  meta.setAttribute('name', 'viewport')
+  meta.setAttribute('content', 'width=device-width, user-scalable=no, initial-scale=' + Scale + ',maximum-scale=' + Scale + ', minimum-scale=' + Scale)
+  document.head.appendChild(meta)
+  docEl.setAttribute('data-dpr', dpr)
+  var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+  var recalc = function() {
+    var width = docEl.getBoundingClientRect().width
+    var rem = width / 10
+    docEl.style.fontSize = rem + 'px'
+  }
+  if (!doc.addEventListener) return
+  win.addEventListener(resizeEvt, recalc, false)
+  doc.addEventListener('DOMContentLoaded', recalc, false)
+})(document, window)
