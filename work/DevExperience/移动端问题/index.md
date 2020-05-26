@@ -115,3 +115,11 @@ showPosition (position) {
   // }
 
 7. https://taro-docs.jd.com/taro/docs/README.html
+
+8. 手机页面混乱  其他手机正常
+
+解决：  此手机手机设置有问题  字体大小或者第三方app内部字体大小设置等 
+
+9. 和原生通信
+
+https://blog.csdn.net/chx_w/article/details/79473980
