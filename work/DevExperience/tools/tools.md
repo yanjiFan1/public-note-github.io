@@ -116,3 +116,7 @@ exit
 
 JSON解析： 
 http://json.cn/
+
+
+2. worl转换成html文件
+https://wordhtml.com/

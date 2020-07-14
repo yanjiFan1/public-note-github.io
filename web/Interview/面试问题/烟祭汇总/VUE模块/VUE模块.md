@@ -121,3 +121,6 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式
 
 混入： https://cn.vuejs.org/v2/guide/mixins.html
 全局引入： Vue.mixin(模块)
+
+21. vue响应式原理：从defineReactive学习Object.defineProperty用法
+https://www.jianshu.com/p/cb7bfd1a8d07
