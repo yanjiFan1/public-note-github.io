@@ -120,3 +120,7 @@ http://json.cn/
 
 2. worl转换成html文件
 https://wordhtml.com/
+
+3. 
+ASCII码转换
+https://tool.oschina.net/encode?type=3
