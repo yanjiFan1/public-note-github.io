@@ -12,3 +12,7 @@ vue3使用vite造轮子
 遇到问题：
 
 1. ts文件找不到vue文件
+
+Typescript只能理解.ts文件，无法理解.vue文件
+
+解决办法

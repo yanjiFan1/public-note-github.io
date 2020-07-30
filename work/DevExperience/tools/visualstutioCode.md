@@ -55,6 +55,7 @@ vue使用
 3. Vetur   // vue 代码高亮插件,写vue必装神器
 4. Vue VSCode Snippets //快速生成vue代码插件，在下边的使用技巧里会分享高级使用技巧
 5. vue 3 Snippets
+6. Auto import
 
 react
 43 ES7 React/Redux/React-Native/JS snippets
