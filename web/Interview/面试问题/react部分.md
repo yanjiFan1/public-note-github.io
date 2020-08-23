@@ -12,6 +12,10 @@
 		！另外用于监听state更新完成，可以使用setState方法的第二个参数，回调函数。在这个回调中读取this.state就是已经批量更新后的结果。
 
 	diff算法  参考：https://zhuanlan.zhihu.com/p/20346379
+
+	diff算法原理图（react和vue）：： https://www.imooc.com/article/295545
+
+
 		1. React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题
 		2. React 通过分层求异的策略，对 tree diff 进行算法优化；
 		3. React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化；

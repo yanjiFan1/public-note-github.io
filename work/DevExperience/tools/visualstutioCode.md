@@ -54,7 +54,8 @@ vue使用
 2 vue VSCode Snippets
 3. Vetur   // vue 代码高亮插件,写vue必装神器
 4. Vue VSCode Snippets //快速生成vue代码插件，在下边的使用技巧里会分享高级使用技巧
-5. 
+5. vue 3 Snippets
+6. Auto import
 
 react
 43 ES7 React/Redux/React-Native/JS snippets
@@ -69,3 +70,6 @@ preview on Web Server // 实时预览效果
 
 
 @2  vs -> 文件->首选项->设置-> 输入  search:Follow Symlinks ：false   默认是true  有点卡   设置为falseJuin不是很卡
+
+
+快捷键： https://mp.weixin.qq.com/s/Yxgs2XmCVCei0QNY22V-Zg

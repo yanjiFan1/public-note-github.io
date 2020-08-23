@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>第一章</title>
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		table{
+			width: 100%;
+
+		}
+		td{
+			width: 16.66%;
+			text-align: center;
+		}
+	</style>
+<body>
+	<div>
+		<div>表单验证 用户名，邮箱，密码</div>
+		<fieldset>
+		  <legend>第一种方案</legend>
+			<div>function checkName() {}</div>
+			<div>function checkEmail() {}</div>
+			<div>function checkPassWord() {}</div>
+			<div>这种方案分析</div>
+			<div>缺点：定义了三个全局变量</div>
+		</fieldset>
+		<fieldset>
+		  <legend>第二种方案</legend>
+			<div>var checkName = function checkName() {}</div>
+			<div>var checkEmail = function checkEmail() {}</div>
+			<div>var checkPassWord = function checkPassWord() {}</div>
+			<div>这种方案分析</div>
+			<div>这个相对于上面的方法来讲：在团队开发的时候，使用变量定义，减少覆盖或被覆盖的风险，一旦被覆盖，所有的功能都会失效,这个时候会轻易发现错误</div>
+		</fieldset>
+		<fieldset>
+		  <legend>第三种方案-用对象收编变量</legend>
+			<div>
+				var checkObject =  {  <br/>
+				&nbsp;&nbsp;checkName : funtion() {},<br/>
+				&nbsp;&nbsp;checkEmail : funtion() {},<br/>
+				&nbsp;&nbsp;checkPassWord : funtion() {},<br/>
+				}<br/>
+			</div>
+			<div>这种方案分析</div>
+			<div>这个方法可以使用对象的.语法使用方法</div>
+		</fieldset>
+		<fieldset>
+		  <legend>第四种方案-</legend>
+			<div>
+				var checkObject =  {  <br/>
+				&nbsp;&nbsp;checkName : funtion() {},<br/>
+				&nbsp;&nbsp;checkEmail : funtion() {},<br/>
+				&nbsp;&nbsp;checkPassWord : funtion() {},<br/>
+				}<br/>
+			</div>
+			<div>这种方案分析</div>
+			<div>这个方法可以使用对象的.语法使用方法</div>
+		</fieldset>
+	</div>
+	<script type="text/javascript">
+		// 表单验证 用户名，邮箱，密码
+		// 第一种方案
+		function checkName() {}
+		function checkEmail() {}
+		function checkPassWord() {}
+		// 这种方案分析
+		// 缺点：定义了三个全局变量
+
+		// 第二种方案
+
+	</script>
+</body>
+</html>	

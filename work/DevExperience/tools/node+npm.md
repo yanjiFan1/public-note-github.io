@@ -40,3 +40,18 @@
 
 4. npm 命令
 https://www.cnblogs.com/blackgan/p/7828047.html
+
+###遇到的问题###
+
+1. 
+npm ERR! Unexpected token in JSON at position 0 while parsing near '<HTML> 解决办法
+npm ERR! Unexpected token in JSON at position 0 while parsing near '<HTML>
+
+方法1
+1 . rm -f package-lock.json
+2. npm cache clean --force
+
+方法2 
+
+npm config rm proxy 
+npm config rm https-proxy

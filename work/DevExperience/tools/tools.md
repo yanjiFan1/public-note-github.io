@@ -112,3 +112,15 @@ exit
 
 
 谷歌访问助手 ---- 谷歌的一个插件（可进行网页访问）
+
+
+JSON解析： 
+http://json.cn/
+
+
+2. worl转换成html文件
+https://wordhtml.com/
+
+3. 
+ASCII码转换
+https://tool.oschina.net/encode?type=3

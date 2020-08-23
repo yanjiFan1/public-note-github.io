@@ -1,3 +1,33 @@
+优秀的参考项目 https://www.jianshu.com/p/2dc805c6c007
+
+RN
+https://github.com/fbsamples/f8app
+https://github.com/iSimar/HackerNews-React-Native
+https://github.com/catalinmiron/react-native-dribbble-app
+https://github.com/FaridSafi/react-native-gifted-messenger
+https://github.com/7kfpun/FinanceReactNative
+https://github.com/race604/ZhiHuDaily-React-Native
+https://github.com/lwansbrough/react-native-camera
+https://github.com/xiekw2010/react-native-gitfeed
+https://github.com/wwayne/react-native-nba-app
+https://github.com/akveo/react-native-reddit-reader
+https://github.com/faridsafi/react-native-basketball
+
+React :
+https://github.com/andrewngu/sound-redux
+https://github.com/benoitvallon/react-native-nw-react-calculator
+https://github.com/casesandberg/react-color
+https://github.com/gatsbyjs/gatsby
+https://github.com/getsentry/sentry/
+https://github.com/gpbl/isomorphic500
+https://github.com/insin/react-hn
+https://github.com/fatiherikli/fil
+https://github.com/khan/perseus
+https://github.com/BinaryMuse/imgsible
+https://github.com/skidding/flatris
+http://www.amazon.com/gp/product/1491929006?ie=UTF8&camp=1789&creativeASIN=1491929006&linkCode=xm2&tag=mybridge-20
+
+
 1.
 react中input 只能输入数字  
 answer:<Input onInput={(e) => e.target.value = e.target.value.replace(/[^\d]/g,'')} />

@@ -68,6 +68,7 @@ componentWillUnmount
 4. componentDidMount
 
 反模式
+
 在 getInitialState 方法中，尝试通过 this.props 来创建 state 的做法是一种反模式
 
 v16.3
